@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%= product.name %> | Dilip Bakery</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="banner">
+    <div class="logo">
+      <img src="/images/logo.png" alt="Logo">
+      <h1>Dilip Bakery</h1>
+    </div>
+    <div class="hamburger" id="hamburger">&#9776;</div>
+    <nav class="nav-links" id="nav-links">
+      <a href="/">Home</a>
+      <a href="/about">About Us</a>
+      <a href="/store">Come to Store</a>
+      <a href="/contact">Contact Us</a>
+    </nav>
+  </header>
+
+  <!-- Product Description -->
+  <section class="product-description">
+    <div class="desc-image">
+      <img src="<%= product.img %>" alt="<%= product.name %>">
+    </div>
+    <div class="desc-info">
+      <h2><%= product.name %></h2>
+      <p class="price">₹<%= product.price %></p>
+      <!-- <p><strong>Type:</strong> <%= product.veg ? "🟢 Veg" : "🔴 Non-Veg" %></p> -->
+      <p><strong>Flavor:</strong> <%= product.flavour %></p>
+      <p><strong>Weight:</strong> <%= product.weight %></p>
+      <p><strong>Shape:</strong> <%= product.shape %></p>
+      <!-- <p class="desc-text"><%= product.description %></p> -->
+      <a href="/order/<%= product._id %>"><button class="order-now-button">Order Now</button></a>
+    </div>
+  </section>
+
+  <script src="/js/app.js" defer></script>
+</body>
+</html>

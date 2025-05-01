@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> Dilip Bakery</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="banner">
+    <div class="logo">
+      <img src="/images/logo.png" alt="Logo">
+      <h1>Dilip Bakery</h1>
+    </div>
+    <div class="hamburger" id="hamburger">&#9776;</div>
+    <nav class="nav-links" id="nav-links">
+      <a href="/about">About Us</a>
+      <a href="/store">Come to Store</a>
+      <a href="/contact">Contact Us</a>
+    </nav>
+</header>
+  
+
+
+
+<% for(let product of products) {%>
+  <!-- Product Detail Section -->
+  <section class="product-page">
+    <div class="product-image">
+      <img src="<%= product.img %>" alt="<%= product.name %>">
+    </div>
+    <div class="product-info">
+      <h2><%= product.name %></h2>
+      <p class="price">₹<%= product.price %></p>
+      
+      <a href="/product/<%=product._id %>"><button class="buy-button">Buy Now</button></a>
+    </div>
+  </section>
+<% } %>
+
+
+<script src="/js/app.js"></script>
+</body>
+</html>

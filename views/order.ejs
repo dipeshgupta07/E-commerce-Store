@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Order - <%= product.name %></title>
+  <link rel="stylesheet" href="/css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="banner">
+    <div class="logo">
+      <img src="/images/logo.png" alt="Logo">
+      <h1>Dilip Bakery</h1>
+    </div>
+    <div class="hamburger" id="hamburger">&#9776;</div>
+    <nav class="nav-links" id="nav-links">
+      <a href="/">Home</a>
+      <a href="/about">About Us</a>
+      <a href="/store">Come to Store</a>
+      <a href="/contact">Contact Us</a>
+    </nav>
+  </header>
+
+  <!-- Order Form Section -->
+  <section class="order-form-section">
+    <div class="product-summary">
+      <img src="<%= product.img %>" alt="<%= product.name %>">
+      <h2><%= product.name %></h2>
+    </div>
+
+    <form class="order-form" action="/order/<%=product._id%>" method="POST">
+      <label for="name">Full Name:</label>
+      <input type="text" name="name" id="name" required>
+
+      <label for="mobile">Mobile Number:</label>
+      <input type="tel" name="mobile" id="mobile" required pattern="[0-9]{10}" placeholder="10-digit number">
+
+      <label for="address">Delivery Address (Forbesganj only):</label>
+      <textarea name="address" id="address" required placeholder="Enter full address within Forbesganj"></textarea>
+
+      <label for="message">Message on Cake:</label>
+      <input type="text" name="message" id="message" maxlength="100">
+
+      <label for="date">Delivery Date:</label>
+      <input type="date" name="date" id="date" required>
+
+      <button type="submit" class="order-submit-button">Continue to Order</button>
+    </form>
+  </section>
+
+  <script src="/js/app.js" defer></script>
+</body>
+</html>
